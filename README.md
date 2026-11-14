@@ -163,3 +163,7 @@ the Developer options menu**. A restart alone, or turning it off over ADB, leave
 - **Extra apps:** if an app you didn't install appears (AirScreen, for example), remove it in Settings → Apps.
 - **"Works with Alexa"** shows in the grid because the firmware re-enables `com.tcl.smartalexa` at every boot.
   Hide it by adding the package to `hidden_apps` in `config.xml`.
+
+## License
+
+MIT. See `LICENSE`.
