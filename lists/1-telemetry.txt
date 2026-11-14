@@ -1,0 +1,4 @@
+# Manufacturer/Google telemetry & accounts
+# NOTE: TCL firmware re-enables com.tcl.usercenter at every boot (seen 2026-10-24); left as is.
+com.google.android.feedback
+com.tcl.usercenter

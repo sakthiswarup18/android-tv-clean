@@ -1,0 +1,5 @@
+# Voice assistants and Chromecast (user does not use them)
+# NOTE: TCL firmware re-enables com.tcl.smartalexa at every boot (seen 2026-10-24); left as is.
+# Google Assistant (com.google.android.katniss) is not listed: the remote's voice button needs it (2026-11-14).
+com.tcl.smartalexa
+com.google.android.apps.mediashell

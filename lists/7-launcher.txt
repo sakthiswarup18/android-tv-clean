@@ -1,0 +1,3 @@
+# Stock Google TV launcher, replaced by tv.clean.launcher. Its home screen shows promo ads, and
+# the remote's Netflix, YouTube and Prime keys start through it, so those keys do nothing (2026-11-14).
+com.google.android.apps.tv.launcherx

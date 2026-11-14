@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Number of dock slots; the app grid below uses the same number of columns. -->
+    <integer name="columns">5</integer>
+
+    <!-- Dock apps, left to right, by package name. Missing or disabled ones are skipped. -->
+    <string-array name="dock_apps">
+        <item>com.netflix.ninja</item>
+        <item>com.google.android.youtube.tv</item>
+        <item>com.tcl.tv</item>
+        <item>app.smarttube.fdroid</item>
+    </string-array>
+
+    <!-- Show CPU / RAM / temperature left of the Inputs pill (refreshes every 3 s while Home is visible). -->
+    <bool name="show_stats">true</bool>
+
+    <!-- Packages never shown in the grid. -->
+    <string-array name="hidden_apps">
+        <item>tv.clean.launcher</item>
+        <item>com.google.android.youtube.tvmusic</item>
+        <!-- TCL "T" remote key handler; shows up as a TCL tv+ shortcut -->
+        <item>com.tcl.partnercustomizer</item>
+    </string-array>
+
+    <!-- Optional display names, as "package=Name". -->
+    <string-array name="label_overrides">
+        <item>com.tcl.tv=Live TV</item>
+        <item>app.smarttube.fdroid=SmartTube</item>
+    </string-array>
+
+    <!-- Remote keys that open a screen, as "keycode=package/Activity". Keycodes are the ones in logcat (keyCode=). -->
+    <string-array name="key_actions">
+        <item>4077=com.android.tv.settings/.MainSettings</item>
+    </string-array>
+</resources>

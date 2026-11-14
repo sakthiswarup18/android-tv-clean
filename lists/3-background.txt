@@ -1,0 +1,3 @@
+# Background services: cleaner/monitor, data-saver VPN
+com.tcl.guard
+com.google.android.apps.nbu.smartconnect.tv

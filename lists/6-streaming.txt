@@ -1,0 +1,7 @@
+# Streaming apps not used (kept: Netflix, YouTube, YouTube Music)
+com.amazon.amazonvideo.livingroom
+in.startv.hotstar
+com.sonyliv
+com.graymatrix.did
+com.jio.media.stb.ondemand
+com.mxtech.videoplayer.television

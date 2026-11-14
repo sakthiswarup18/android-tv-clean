@@ -1,0 +1,3 @@
+# Google TV setup wizard: takes Home (RecoveryActivity) once launcherx is gone.
+# Its saved Wi-Fi networks are deleted with it.
+com.google.android.tungsten.setupwraith

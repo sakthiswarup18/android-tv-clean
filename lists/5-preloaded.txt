@@ -1,0 +1,5 @@
+# Preloaded extras (user does not use them)
+com.tcl.ui_mediaCenter
+com.tcl.t_solo
+com.google.android.apps.tv.dreamx
+com.google.android.play.games

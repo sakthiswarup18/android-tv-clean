@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:descendantFocusability="blocksDescendants">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/wallpaper" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/clock_scrim" />
+
+    <ScrollView
+        android:id="@+id/scroller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="false"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <FrameLayout
+            android:id="@+id/page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false">
+
+            <LinearLayout
+                android:id="@+id/column"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:orientation="vertical">
+
+                <!-- First screen: clock, pills, dock. Height is set to the screen height in code. -->
+                <FrameLayout
+                    android:id="@+id/hero"
+                    android:layout_width="match_parent"
+                    android:layout_height="540dp"
+                    android:clipChildren="false">
+
+                    <View
+                        android:id="@+id/glow"
+                        android:layout_width="720dp"
+                        android:layout_height="300dp"
+                        android:layout_gravity="bottom|start"
+                        android:alpha="0" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="30dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/greeting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:textColor="#A6FFFFFF"
+                            android:textSize="17sp" />
+
+                        <TextClock
+                            android:id="@+id/clock"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:format12Hour="h:mm"
+                            android:format24Hour="HH:mm"
+                            android:includeFontPadding="false"
+                            android:textColor="#F2FFFFFF"
+                            android:textSize="76sp" />
+
+                        <TextClock
+                            android:id="@+id/date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:format12Hour="EEEE, d MMMM"
+                            android:format24Hour="EEEE, d MMMM"
+                            android:textColor="#A6FFFFFF"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/pills"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top|end"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="56dp"
+                        android:orientation="horizontal">
+
+                        <!-- System stats; not focusable, grows to the left. -->
+                        <TextView
+                            android:id="@+id/stats"
+                            style="@style/Pill"
+                            android:layout_marginEnd="12dp"
+                            android:textColor="#A6FFFFFF"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/pill_inputs"
+                            style="@style/Pill"
+                            android:drawableStart="@drawable/ic_input"
+                            android:text="@string/inputs" />
+
+                        <TextView
+                            android:id="@+id/pill_wifi"
+                            style="@style/Pill"
+                            android:layout_marginStart="12dp"
+                            android:drawableStart="@drawable/ic_wifi"
+                            android:maxWidth="220dp"
+                            android:text="Wi-Fi" />
+
+                        <TextView
+                            android:id="@+id/pill_settings"
+                            style="@style/Pill"
+                            android:layout_marginStart="12dp"
+                            android:drawableStart="@drawable/ic_settings"
+                            android:text="@string/settings" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/dock_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|start"
+                        android:singleLine="true"
+                        android:textColor="#EDFFFFFF"
+                        android:textSize="38sp" />
+
+                    <LinearLayout
+                        android:id="@+id/dock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:layout_marginBottom="22dp"
+                        android:background="@drawable/dock_band"
+                        android:clipChildren="false"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal" />
+                </FrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/grid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="24dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:focusable="false"
+                    android:nestedScrollingEnabled="false"
+                    android:overScrollMode="never" />
+
+                <View
+                    android:id="@+id/tail"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
+            </LinearLayout>
+
+            <tv.clean.launcher.HighlightView
+                android:id="@+id/highlight"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/inputs_menu"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:background="@drawable/menu_bg"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:visibility="gone" />
+</FrameLayout>

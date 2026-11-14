@@ -1,0 +1,10 @@
+.venv/
+shots/
+launcher/.gradle/
+launcher/build/
+launcher/app/build/
+launcher/local.properties
+backup/*
+!backup/disabled-by-us.txt
+__pycache__/
+.DS_Store
